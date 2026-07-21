@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>brandbase — Don't let your visuals undersell your business.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Poppins:wght@700;800&family=Noto+Sans+Thai:wght@700;800&family=Chakra+Petch:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAFA;
+    --gray:#E6E6E6;
+    --black:#111111;
+    --slate:#7A7A7A;
+    --orange:#FF5A00;
+    --display:'Poppins','Noto Sans Thai',sans-serif;
+    --mono:'IBM Plex Mono','Chakra Petch',monospace;
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:var(--mono);
+    font-size:15px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px; position:relative;}
+
+  h1,h2,h3{
+    font-family:var(--display);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:-0.04em;
+    line-height:0.95;
+    margin:0;
+    color:var(--black);
+  }
+
+  p{margin:0;}
+  .body-text{font-size:15px; color:var(--black); max-width:580px;}
+  .body-text.muted{color:var(--slate);}
+  .body-text.on-black{color:var(--paper);}
+
+  .section-pad{padding:84px 0;}
+  .border-b{border-bottom:1px solid var(--slate);}
+
+  /* ---------- HEADER ---------- */
+  header.site{border-bottom:1px solid var(--black); padding:22px 0;}
+  header.site .wrap{display:flex; justify-content:space-between; align-items:center;}
+  header.site .logo{height:100px; width:auto;}
+  header.site .nav-tag{font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--slate);}
+  @media (max-width:560px){ header.site .nav-tag{display:none;} header.site .logo{height:72px;} }
+
+  /* ---------- TAG / EYEBROW ---------- */
+  .tag-chip{
+    display:inline-block;
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--orange);
+    border:1px solid var(--orange);
+    padding:5px 10px;
+    margin-bottom:20px;
+    background:transparent;
+  }
+  .tag-chip.inverted{color:var(--orange); border-color:var(--orange);}
+  .tag-chip.filled{background:transparent; border-color:var(--orange); color:var(--orange);}
+
+  /* ---------- MARKER STREAK ---------- */
+  .streak{position:relative; white-space:nowrap;}
+  .streak::after{
+    content:""; position:absolute; left:-2px; right:-2px; bottom:1px;
+    height:8px; background:var(--orange); z-index:-1; transform:skewX(-8deg) rotate(-1deg);
+  }
+
+  /* ---------- CURSOR BRACKET ---------- */
+  .cursor-box{position:relative; display:inline-block; padding:3px 6px;}
+  .cursor-box::before, .cursor-box::after{
+    content:""; position:absolute; width:9px; height:9px;
+    border-top:2px solid var(--orange); border-left:2px solid var(--orange);
+    top:-3px; left:-3px;
+  }
+  .cursor-box::after{
+    top:auto; left:auto; bottom:-3px; right:-3px;
+    border-top:none; border-left:none;
+    border-bottom:2px solid var(--orange); border-right:2px solid var(--orange);
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--orange); color:var(--black);
+    font-family:var(--mono); font-weight:600; font-size:13px;
+    text-transform:uppercase; letter-spacing:0.04em;
+    padding:16px 24px; border:1px solid var(--black); border-radius:0;
+    box-shadow:4px 4px 0 var(--black); cursor:pointer; text-decoration:none;
+    transition:transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .btn:hover{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--black);}
+  .btn.btn-dark{background:var(--black); color:var(--paper);}
+  .btn.btn-on-black{background:var(--orange); color:var(--black); box-shadow:4px 4px 0 var(--paper); border-color:var(--paper);}
+  .btn.btn-on-black:hover{box-shadow:2px 2px 0 var(--paper);}
+
+  .microcopy{font-size:15px; color:var(--slate); margin-top:16px; max-width:460px; font-family:var(--mono);}
+
+  /* ---------- HERO ---------- */
+  .hero-grid{display:grid; grid-template-columns:1.25fr 0.9fr; gap:40px; align-items:start; padding-top:72px; padding-bottom:72px;}
+  @media (max-width:780px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero-grid h1{font-size:clamp(34px,5.2vw,58px); max-width:680px;}
+  .hero-grid .sub{
+    font-family:var(--display); font-weight:700; text-transform:uppercase;
+    font-size:15px; letter-spacing:0; color:var(--black); margin:24px 0 32px;
+  }
+
+  /* specimen card */
+  .specimen-card{
+    background:var(--black); color:var(--paper);
+    padding:28px; border:1px solid var(--black);
+    box-shadow:6px 6px 0 var(--black);
+    margin-top:8px;
+  }
+  .specimen-card .logo-w{height:40px; width:auto; margin-bottom:26px;}
+  .specimen-card .row{
+    display:flex; justify-content:space-between; gap:16px; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.04em; color:#A6A6A6;
+    border-top:1px solid #333; padding:10px 0;
+  }
+  .specimen-card .row span:last-child{color:var(--paper); font-weight:600; text-align:right;}
+  .specimen-card .barcode{
+    margin-top:16px; height:24px;
+    background:repeating-linear-gradient(90deg, var(--paper) 0 1px, transparent 1px 2px, var(--paper) 2px 3px, transparent 3px 6px, var(--paper) 6px 8px, transparent 8px 10px);
+    opacity:0.85;
+  }
+
+  /* ---------- TWO COL ---------- */
+  .two-col{display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px;}
+  @media (max-width:760px){ .two-col{grid-template-columns:1fr; gap:32px;} }
+  .two-col h2{font-size:clamp(26px,3.2vw,36px);}
+
+  .stack-item{padding:18px 0; border-top:1px solid var(--slate);}
+  .stack-item:first-child{border-top:none; padding-top:0;}
+  .stack-item .idx{font-family:var(--mono); font-weight:600; font-size:12px; color:var(--orange); display:block; margin-bottom:6px; text-transform:uppercase;}
+  .stack-item .headline-sm{font-family:var(--display); font-weight:800; text-transform:uppercase; letter-spacing:-0.02em; font-size:16px; margin-bottom:6px; display:block;}
+  .stack-item p{font-size:15.5px; color:var(--slate);}
+
+  /* ---------- SOLUTION: black band ---------- */
+  .solution-band{background:var(--black); color:var(--paper); padding:84px 0;}
+  .solution-band h2{color:var(--paper); font-size:clamp(28px,4.2vw,44px); max-width:720px;}
+  .solution-band .done{color:var(--orange);}
+
+  /* ---------- PROOF / SLIDER ---------- */
+  .proof-section{background:var(--gray); padding:84px 0;}
+  .ba-slider{
+    position:relative; margin-top:40px;
+    border:1px solid var(--black); box-shadow:6px 6px 0 var(--black);
+    overflow:hidden; user-select:none; touch-action:none; background:var(--paper);
+  }
+  .ba-slider img{width:100%; height:auto; display:block; pointer-events:none;}
+  .ba-before-wrap{position:absolute; top:0; left:0; height:100%; width:50%; overflow:hidden;}
+  .ba-before-wrap img{height:100%; width:auto; max-width:none; position:absolute; top:0; left:0;}
+  .ba-handle{position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--orange); cursor:ew-resize;}
+  .ba-handle::after{
+    content:"◂ ▸"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    background:var(--orange); color:var(--paper);
+    font-family:var(--mono); font-weight:600; font-size:12px;
+    padding:8px 10px; white-space:nowrap; border:1px solid var(--black);
+  }
+  .ba-topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:40px;
+  }
+  .ba-label{
+    font-family:var(--mono); font-weight:600; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.06em;
+    background:var(--black); color:var(--paper); padding:6px 12px;
+  }
+  .ba-label.after{background:var(--orange); color:var(--paper); border:1px solid var(--black);}
+
+  /* ---------- DELIVERABLES (prominent, gray band) ---------- */
+  .what-band{background:var(--gray); padding:92px 0;}
+  .what-band h2{font-size:clamp(30px,4vw,44px); max-width:600px;}
+  .deliverables-grid{display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--black); border-left:1px solid var(--black); margin-top:40px; background:var(--paper); box-shadow:6px 6px 0 var(--black); border-right:1px solid var(--black); border-bottom:1px solid var(--black);}
+  @media (max-width:560px){ .deliverables-grid{grid-template-columns:1fr;} }
+  .deliverable{border-right:1px solid var(--black); border-bottom:1px solid var(--black); padding:22px 24px;}
+  .deliverable:nth-child(2n){border-right:none;}
+  .deliverable:nth-last-child(-n+2){border-bottom:none;}
+  @media (max-width:560px){
+    .deliverable{border-right:none;}
+    .deliverable:nth-last-child(2){border-bottom:1px solid var(--black);}
+  }
+  .deliverable .name{font-family:var(--display); font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; font-size:15px; display:block; margin-bottom:6px;}
+  .deliverable .desc{color:var(--slate); font-size:15px; display:block;}
+  .footnote{font-size:14.5px; color:var(--slate); margin-top:22px;}
+
+  /* ---------- PRICING ---------- */
+  .pricing-section{padding:92px 0;}
+  .pricing-card{
+    border:1px solid var(--black); box-shadow:6px 6px 0 var(--black);
+    background:var(--paper); margin-top:40px;
+    display:grid; grid-template-columns:1fr 1fr;
+  }
+  @media (max-width:760px){ .pricing-card{grid-template-columns:1fr;} }
+  .price-main{padding:36px 34px; border-right:1px solid var(--black);}
+  @media (max-width:760px){ .price-main{border-right:none; border-bottom:1px solid var(--black);} }
+  .price-old{
+    font-family:var(--mono); font-size:20px; color:var(--slate);
+    text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:var(--orange);
+    display:block; margin-bottom:6px;
+  }
+  .price-now{
+    font-family:var(--display); font-weight:800; font-size:clamp(44px,6vw,64px);
+    letter-spacing:-0.04em; line-height:1; display:block; margin-bottom:14px;
+  }
+  .price-chip{
+    display:inline-block; background:var(--orange); color:var(--paper); border:1px solid var(--black);
+    font-family:var(--mono); font-weight:600; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.05em; padding:6px 12px;
+  }
+  .price-bonus{padding:36px 34px; background:var(--black); color:var(--paper);}
+  .price-bonus .bonus-tag{
+    display:inline-block; background:var(--orange); color:var(--paper); border:1px solid var(--black);
+    font-family:var(--mono); font-weight:600; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.06em; padding:6px 12px; margin-bottom:14px;
+  }
+  .price-bonus .bonus-name{
+    font-family:var(--display); font-weight:800; text-transform:uppercase; color:var(--paper);
+    font-size:19px; letter-spacing:-0.01em; display:block; margin-bottom:10px;
+  }
+  .price-bonus p{font-size:15px; color:#C9C9C9;}
+  .pricing-cta{margin-top:36px;}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); margin-top:44px; border-top:1px solid var(--black); border-left:1px solid var(--black);}
+  @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
+  .step{border-right:1px solid var(--black); border-bottom:1px solid var(--black); padding:24px 22px;}
+  .step .num{font-family:var(--display); font-weight:800; font-size:12px; color:var(--paper); background:var(--black); width:26px; height:26px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
+  .step h3{font-size:15px; margin-bottom:8px; letter-spacing:-0.02em;}
+  .step p{font-size:15.5px; color:var(--slate);}
+
+  /* ---------- COMPARISON (square, no scroll) ---------- */
+  .ledger{margin-top:40px; border:1px solid var(--black);}
+  table{width:100%; border-collapse:collapse; font-family:var(--mono); table-layout:fixed;}
+  thead tr{background:var(--black);}
+  thead th{color:var(--paper); font-weight:600; text-align:left; padding:12px 10px; font-size:11px; text-transform:uppercase; letter-spacing:0.03em; overflow-wrap:break-word;}
+  thead th:first-child{color:var(--slate); width:17%;}
+  thead th.featured{color:var(--orange);}
+  tbody td{padding:12px 10px; border-top:1px solid var(--slate); color:var(--black); font-size:13px; overflow-wrap:break-word; vertical-align:top;}
+  tbody td:first-child{font-weight:600; color:var(--slate); font-size:12px;}
+  tbody td.featured{background:var(--gray); font-weight:600;}
+  @media (max-width:560px){
+    thead th{font-size:9.5px; padding:10px 6px; letter-spacing:0;}
+    tbody td{font-size:11.5px; padding:10px 6px;}
+    tbody td:first-child{font-size:10.5px;}
+    .cursor-box{padding:2px 4px;}
+  }
+
+  /* ---------- MID CTA ---------- */
+  .mid-cta{background:var(--orange); padding:64px 0;}
+  .mid-cta-inner{display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;}
+  .mid-cta h2{font-size:clamp(22px,3vw,30px); max-width:480px; color:var(--paper);}
+  .mid-cta .microcopy{color:rgba(255,255,255,0.75);}
+
+  /* ---------- FAQ ---------- */
+  details{border-top:1px solid var(--slate); padding:18px 0;}
+  summary{cursor:pointer; font-family:var(--display); font-weight:800; text-transform:uppercase; letter-spacing:-0.01em; font-size:14px; color:var(--black); list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:18px; color:var(--orange); margin-left:12px; flex-shrink:0; font-family:var(--mono);}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px; font-size:15.5px; color:var(--slate); max-width:600px;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-band{background:var(--black); color:var(--paper); padding:84px 0 56px;}
+  .final-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:start;}
+  @media (max-width:760px){ .final-grid{grid-template-columns:1fr;} }
+  .final-band h2{color:var(--paper); font-size:clamp(26px,3.8vw,40px); max-width:520px;}
+
+  .secondary-path{border:1px solid #333; padding:18px 20px; display:flex; align-items:center; gap:16px; background:var(--paper);}
+  .secondary-path img{width:96px; height:96px;}
+  .secondary-path .label{font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--slate); margin-bottom:4px;}
+  .secondary-path .txt{font-size:14px; color:var(--black); max-width:220px;}
+  .secondary-path .txt strong{font-family:var(--display);}
+
+  footer{background:var(--black); padding:22px 0; border-top:1px solid #333;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center;}
+  footer .logo-w{height:30px; width:auto;}
+  footer .meta{font-family:var(--mono); font-size:12px; color:#999;}
+
+  :focus-visible{outline:2px solid var(--orange); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ .btn{transition:none;} }
+
+  /* ---------- RESPONSIVE PASS ---------- */
+  @media (max-width:780px){
+    .section-pad{padding:56px 0;}
+    .what-band,.pricing-section{padding:60px 0;}
+    .proof-section,.solution-band{padding:56px 0;}
+    .final-band{padding:56px 0 40px;}
+    .hero-grid{padding-top:48px; padding-bottom:48px; gap:32px;}
+    .mid-cta{padding:48px 0;}
+  }
+  @media (max-width:560px){
+    body{font-size:14.5px;}
+    .wrap{padding:0 26px;}
+    .hero-grid{padding-top:36px; padding-bottom:36px;}
+    .hero-grid h1{font-size:clamp(30px,8.5vw,38px);}
+    .specimen-card{padding:22px; box-shadow:4px 4px 0 var(--black);}
+    .ba-slider{box-shadow:4px 4px 0 var(--black);}
+    .deliverables-grid{box-shadow:4px 4px 0 var(--black);}
+    .deliverable{padding:18px;}
+    .pricing-card{box-shadow:4px 4px 0 var(--black);}
+    .price-main,.price-bonus{padding:26px 22px;}
+    .price-now{font-size:44px;}
+    .step{padding:20px 18px;}
+    .btn{padding:14px 18px; font-size:12px; box-shadow:3px 3px 0 var(--black);}
+    .btn.btn-on-black{box-shadow:3px 3px 0 var(--paper);}
+    .mid-cta-inner{flex-direction:column; align-items:flex-start;}
+    .secondary-path{width:100%;}
+    .two-col{gap:24px;}
+    footer .wrap{flex-direction:column; gap:10px; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="wrap">
+    <img class="logo" src="assets/logo-black.png" alt="brandbase">
+    <span class="nav-tag">Brand Visuals Sprint Session</span>
+  </div>
+</header>
+
+<!-- 01 HERO -->
+<section class="border-b">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Don't let your visuals <span style="color:var(--orange);">undersell</span> your business.</h1>
+      <p class="sub">Professional brand visuals. Ready in one day.</p>
+      <a class="btn" href="https://tally.so/r/Gx4aqj" target="_blank" rel="noopener">Take the Brand Visual Audit <span class="arrow">→</span></a>
+      <p class="microcopy">ทำแบบทดสอบ 1 นาที ดูว่าภาพลักษณ์ของแบรนด์คุณกำลังฉุดความน่าเชื่อถือของธุรกิจหรือเปล่า</p>
+    </div>
+    <div class="specimen-card">
+      <img class="logo-w" src="assets/logo-white.png" alt="brandbase">
+      <div class="row"><span>Format</span><span>Private session</span></div>
+      <div class="row"><span>Session</span><span>2–3 hours</span></div>
+      <div class="row"><span>Delivery</span><span>Within 1 day</span></div>
+      <div class="row"><span>Output</span><span>Complete brand package</span></div>
+      <div class="barcode" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROBLEM -->
+<section class="section-pad border-b">
+  <div class="wrap two-col">
+    <div>
+      <span class="tag-chip">The Problem</span>
+      <h2>Your business is solid. Your brand visuals aren't keeping up.</h2>
+      <p class="body-text muted" style="margin-top:18px;">มีทางเลือกอยู่สามทาง แต่ไม่มีทางไหนที่เหมาะกับคุณจริงๆ</p>
+    </div>
+    <div>
+      <div class="stack-item">
+        <span class="idx">01 — Agency / Design Specialist</span>
+        <span class="headline-sm">Big budget. 6–12 weeks.</span>
+        <p>แต่คุณไม่ได้ต้องการกระบวนการกลยุทธ์ที่ลึกซึ้ง คุณแค่ต้องการให้แบรนด์ดูน่าเชื่อถือ สะท้อนธุรกิจจริง และใช้งานได้จริง</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">02 — Regular Freelancer</span>
+        <span class="headline-sm">Cheap. Generic. Forgettable.</span>
+        <p>คุณได้งาน แต่มันไม่ต่างจากแบรนด์ตลาดทั่วไป ไม่สะท้อนมาตรฐานหรือระดับของธุรกิจที่คุณสร้างมา</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">03 — DIY with AI</span>
+        <span class="headline-sm">Fast start. Slow finish.</span>
+        <p>ดูเหมือนง่าย แต่กว่าจะลงตัวต้องใช้เวลา ซึ่งคุณเอาเวลาไปทำธุรกิจดีกว่า</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SOLUTION -->
+<section class="solution-band border-b">
+  <div class="wrap">
+    <span class="tag-chip inverted">The Solution</span>
+    <h2>Brand Visuals<br>Sprint Session</h2>
+    <p class="body-text on-black" style="margin-top:20px;">
+      เซสชันออนไลน์แบบตัวต่อตัว ที่จะช่วยคุณสร้าง visual system ของธุรกิจภายในเวลาเพียงไม่กี่ชั่วโมง พร้อมปรับแต่ง จัดแพ็กเกจ และส่งมอบให้พร้อมใช้งานภายใน 1 วัน
+    </p>
+  </div>
+</section>
+
+<!-- 04 HOW IT WORKS -->
+<section class="section-pad border-b">
+  <div class="wrap">
+    <span class="tag-chip">How It Works</span>
+    <h2 style="font-size:clamp(26px,3.4vw,34px); max-width:520px;">Three simple steps.</h2>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>Brand Brief</h3><p>ชุดคำถามที่ช่วยให้เราเข้าใจภาพที่คุณมีอยู่ในใจ เพื่อให้วันทำงานจริงเริ่มต้นได้อย่างมีทิศทาง</p></div>
+      <div class="step"><span class="num">2</span><h3>The Session</h3><p>เซสชันส่วนตัว 2–3 ชั่วโมง ที่จะพาคุณเปลี่ยน Brand Vibe ให้กลายเป็นองค์ประกอบหลักของแบรนด์อย่างเป็นระบบ</p></div>
+      <div class="step"><span class="num">3</span><h3>Delivery</h3><p>ขัดเกลาและสรุปเป็น Brand Package พร้อมส่งมอบภายในวันเดียวกันหรือเช้าวันถัดไป</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PROOF -->
+<section class="proof-section border-b">
+  <div class="wrap">
+    <span class="tag-chip">The Proof</span>
+    <h2 style="font-size:clamp(26px,3.4vw,34px); max-width:560px;">See the difference one day makes.</h2>
+    <div class="ba-topbar">
+      <span class="ba-label before">Before</span>
+      <span class="ba-label after">After</span>
+    </div>
+    <div class="ba-slider" id="baSlider" style="margin-top:12px;">
+      <img src="assets/after.png" alt="After — brand visuals by brandbase" draggable="false">
+      <div class="ba-before-wrap" id="baBeforeWrap">
+        <img src="assets/before.png" alt="Before" id="baBeforeImg" draggable="false">
+      </div>
+      <div class="ba-handle" id="baHandle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 WHAT YOU GET (prominent) -->
+<section class="what-band border-b">
+  <div class="wrap">
+    <span class="tag-chip filled">What You Get</span>
+    <h2>Everything you need. Nothing you don't.</h2>
+    <div class="deliverables-grid">
+      <div class="deliverable"><span class="name">Brand Visual Guideline</span><span class="desc">Mood, tone, ชุดสี และฟอนต์ของแบรนด์ เพื่อความสม่ำเสมอทั้งในทีมของคุณและดีไซเนอร์ทุกคนที่ร่วมงานด้วย</span></div>
+      <div class="deliverable"><span class="name">AI Brand Design Brief</span><span class="desc">ไฟล์ข้อความที่มีโครงสร้างชัดเจน สำหรับตั้งค่า vibe และหลักการออกแบบของแบรนด์ให้ AI tool ทุกตัวก่อนเริ่มสร้างงาน</span></div>
+      <div class="deliverable"><span class="name">Canva Brand Kit Setup Pack</span><span class="desc">พร้อมนำไปใช้กับ workflow ที่ทีมคุณใช้อยู่ได้ทันที</span></div>
+      <div class="deliverable"><span class="name">Brand Stockphotos / Background Textures Guide</span><span class="desc">ไม่ใช่แค่ภาพสวย แต่เป็นทิศทางของภาพที่สอดคล้องกับแบรนด์ พร้อมตัวอย่างที่ช่วยให้เห็นว่าภาพที่จะใช้ควรเป็นแบบไหน</span></div>
+      <div class="deliverable"><span class="name">Brand Icons / Graphic Elements Guide</span><span class="desc">ชุดแนวทางสำหรับ Icon และองค์ประกอบกราฟิกของแบรนด์</span></div>
+      <div class="deliverable"><span class="name">Real-world Application Mockups</span><span class="desc">เห็นแบรนด์ของคุณบนของที่จะได้ใช้งานจริง</span></div>
+    </div>
+    <p class="footnote">+ Brand Visual Advisory ให้คำปรึกษาต่ออีก 2 สัปดาห์ · *ไม่รวมค่าบริการ Canva Pro</p>
+  </div>
+</section>
+
+<!-- 06 PRICING -->
+<section class="pricing-section border-b">
+  <div class="wrap">
+    <span class="tag-chip">Pricing</span>
+    <h2 style="font-size:clamp(26px,3.4vw,36px); max-width:520px;">One session. One price.</h2>
+    <div class="pricing-card">
+      <div class="price-main">
+        <span class="price-old">฿40,000</span>
+        <span class="price-now">฿25,000</span>
+        <span class="price-chip">Early Bird — Limited Slots</span>
+      </div>
+      <div class="price-bonus">
+        <span class="bonus-tag">Early Bird Bonus</span>
+        <span class="bonus-name">Canva for Business: Team Training Session</span>
+        <p>เทรนนิ่งออนไลน์ 2 ชั่วโมงสำหรับทีมของคุณ: Canva 101, หลักการออกแบบพื้นฐาน และการใช้ Brand Kit กับ Templates เพื่อความสม่ำเสมอของแบรนด์ในงานประจำวัน</p>
+      </div>
+    </div>
+    <div class="pricing-cta">
+      <a class="btn" href="https://tally.so/r/Gx4aqj" target="_blank" rel="noopener">Take the 1-minute audit <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 08 COMPARISON -->
+<section class="section-pad border-b">
+  <div class="wrap">
+    <span class="tag-chip">How It Stacks Up</span>
+    <h2 style="font-size:clamp(26px,3.4vw,34px); max-width:480px;">Where brandbase actually sits.</h2>
+    <div class="ledger">
+      <table>
+        <thead><tr><th></th><th>Agency</th><th>Freelancer</th><th>DIY / AI</th><th class="featured">brandbase</th></tr></thead>
+        <tbody>
+          <tr><td>ความเร็ว</td><td>6–12 สัปดาห์</td><td>แล้วแต่คน</td><td>เร็ว แต่ถ้าจะให้งานดีต้องเสียเวลาเรียนรู้</td><td class="featured"><span class="cursor-box">1 วัน</span></td></tr>
+          <tr><td>การลงทุน</td><td>สูง</td><td>กลาง</td><td>ต่ำ</td><td class="featured">กลาง</td></tr>
+          <tr><td>ความสม่ำเสมอ</td><td>สูง</td><td>ต่ำ</td><td>ต่ำ</td><td class="featured">สูง</td></tr>
+          <tr><td>ดูน่าเชื่อถือ</td><td>ใช่</td><td>อาจจะ</td><td>อาจจะ</td><td class="featured">ใช่</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 09 FAQ -->
+<section class="section-pad border-b">
+  <div class="wrap two-col">
+    <div>
+      <span class="tag-chip">FAQ</span>
+      <h2>Question not answered? Reach out directly.</h2>
+    </div>
+    <div>
+      <details>
+        <summary>Brand Visuals Sprint Session นี้เหมาะกับใคร?</summary>
+        <p>เจ้าของธุรกิจหรือผู้ตัดสินใจเรื่องแบรนด์ ที่อยากให้แบรนด์สะท้อนธุรกิจได้อย่างรวดเร็วและคุ้มค่า คุณมีไอเดียคร่าวๆ อยู่แล้ว แค่ต้องการคนช่วยปั้นให้เป็นทิศทางที่ชัดเจน โดยไม่ต้องการงานออกแบบเฉพาะทางขั้นสูง</p>
+      </details>
+      <details>
+        <summary>ไม่เหมาะกับใคร?</summary>
+        <p>ผู้ที่ต้องการงานออกแบบเฉพาะตัวขั้นสูง หรือกลยุทธ์แบรนด์แบบลงลึก รวมถึงผู้ที่พอใจกับงานฟรีแลนซ์ทั่วไปหรืองานดีไซน์จาก AI แบบพื้นฐานอยู่แล้ว</p>
+      </details>
+      <details>
+        <summary>ถ้าไม่ชอบทิศทางที่ออกมาล่ะ?</summary>
+        <p>บอกเราตรงๆ ได้เลย เราถึงเริ่มจาก brand vibe และ moodboard ก่อนเสมอ ถ้ารู้สึกว่ากระบวนการไม่ใช่สำหรับคุณ ยกเลิกได้ก่อนไปขั้นถัดไปโดยไม่มีค่าใช้จ่าย แต่เมื่อตัดสินใจเดินหน้าต่อแล้ว จะมีค่าบริการเต็มจำนวน</p>
+      </details>
+      <details>
+        <summary>ต้องเตรียมอะไรก่อนเซสชัน?</summary>
+        <p>ส่วนใหญ่คุณได้เตรียมไว้แล้วผ่านแบบสอบถาม brand brief แค่เว้นเวลาว่างต่อเนื่องสักสองสามชั่วโมง งดสายโทรศัพท์และประชุมอื่นระหว่างนั้น ยิ่งเซสชันโฟกัสมากเท่าไหร่ ผลลัพธ์ยิ่งดีเท่านั้น</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 FINAL CTA -->
+<section class="final-band">
+  <div class="wrap final-grid">
+    <div>
+      <span class="tag-chip inverted">How To Begin</span>
+      <h2>Start with the 1-minute audit.</h2>
+      <a class="btn btn-on-black" href="https://tally.so/r/Gx4aqj" target="_blank" rel="noopener" style="margin-top:28px;">Take the Brand Visual Audit <span class="arrow">→</span></a>
+    </div>
+    <div class="secondary-path">
+      <img src="assets/line-qr.png" alt="QR code — add brandbase on LINE">
+      <div>
+        <p class="label">Prefer to talk first?</p>
+        <p class="txt"><a href="https://lin.ee/xvZ19hO" target="_blank" rel="noopener" style="color:var(--orange); text-decoration:none; font-weight:700;">LINE OA @brandbase</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="logo-w" src="assets/logo-white.png" alt="brandbase">
+    <span class="meta">Brand Visuals Sprint Session</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const slider = document.getElementById('baSlider');
+  const beforeWrap = document.getElementById('baBeforeWrap');
+  const beforeImg = document.getElementById('baBeforeImg');
+  const handle = document.getElementById('baHandle');
+
+  function sizeBeforeImg(){
+    beforeImg.style.width = slider.offsetWidth + 'px';
+    beforeImg.style.height = 'auto';
+    beforeImg.style.maxWidth = 'none';
+  }
+  window.addEventListener('resize', sizeBeforeImg);
+  window.addEventListener('load', sizeBeforeImg);
+  sizeBeforeImg();
+
+  function setPos(clientX){
+    const rect = slider.getBoundingClientRect();
+    let x = clientX - rect.left;
+    x = Math.max(0, Math.min(rect.width, x));
+    const pct = (x / rect.width) * 100;
+    beforeWrap.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  }
+
+  let dragging = false;
+  slider.addEventListener('pointerdown', function(e){
+    dragging = true;
+    slider.setPointerCapture(e.pointerId);
+    setPos(e.clientX);
+  });
+  slider.addEventListener('pointermove', function(e){
+    if(dragging) setPos(e.clientX);
+  });
+  slider.addEventListener('pointerup', function(){ dragging = false; });
+  slider.addEventListener('pointercancel', function(){ dragging = false; });
+})();
+</script>
+
+</body>
+</html>
