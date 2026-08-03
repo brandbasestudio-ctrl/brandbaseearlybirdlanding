@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Visual Audit — brandbase</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:title" content="Brand Visual Audit — brandbase">
+<meta property="og:description" content="แบบทดสอบ 1 นาที เพื่อค้นพบว่าภาพลักษณ์ของแบรนด์กำลังช่วยหรือฉุดธุรกิจคุณ">
+<meta property="og:image" content="https://www.brandbasesession.com/assets/og-image.png">
+<meta property="og:url" content="https://www.brandbasesession.com/audit.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.brandbasesession.com/assets/og-image.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGEN3S7CJH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TGEN3S7CJH');
+</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xtt7ubz4zt");</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1008045918725567');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1008045918725567&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Poppins:wght@700;800&family=Noto+Sans+Thai:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAFA;--gray:#E6E6E6;--black:#111111;--slate:#7A7A7A;--orange:#FF5A00;
+    --display:'Poppins','Noto Sans Thai',sans-serif;
+    --mono:'IBM Plex Mono',monospace;--maxw:680px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--black);font-family:var(--mono);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+  .form-wrap,.result-wrap{flex:1;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* HEADER */
+  header.site{border-bottom:1px solid var(--black);padding:20px 0;}
+  header.site .inner{max-width:1120px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;}
+  header.site .logo{height:64px;width:auto;}
+  header.site .nav-tag{font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);}
+  @media(max-width:560px){header.site .nav-tag{display:none;}header.site .logo{height:48px;}}
+
+  /* FORM */
+  .form-wrap{padding:48px 0 80px;}
+  .form-intro{margin-bottom:48px;}
+  .form-intro h1{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95;font-size:clamp(28px,4vw,38px);margin:0 0 10px;}
+  .form-intro p{font-size:15px;color:var(--slate);margin:0;}
+
+  /* QUESTION BLOCK */
+  .q-block{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--gray);}
+  .q-block:last-of-type{border-bottom:none;}
+  .q-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--orange);margin:0 0 10px;display:block;}
+  .q-text{font-family:var(--mono);font-weight:600;letter-spacing:0;line-height:1.6;font-size:clamp(15px,2.2vw,17px);color:var(--black);margin:0 0 20px;}
+
+  /* OPTIONS */
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .option{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--black);padding:14px 16px;cursor:pointer;transition:background 0.1s ease;background:var(--paper);}
+  .option:hover{background:var(--gray);}
+  .option.selected{background:var(--black);color:var(--paper);border-color:var(--black);}
+  .option input[type=radio]{display:none;}
+  .option-key{font-family:var(--mono);font-weight:600;font-size:12px;color:var(--orange);flex-shrink:0;width:16px;margin-top:2px;}
+  .option.selected .option-key{color:var(--orange);}
+  .option-text{font-size:14px;line-height:1.5;}
+
+  /* CONTACT */
+  .contact-section{margin-top:16px;padding-top:40px;border-top:1px solid var(--black);}
+  .contact-section h2{font-family:var(--mono);font-weight:600;letter-spacing:0;font-size:clamp(16px,2.4vw,18px);margin:0 0 24px;text-transform:none;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;color:var(--black);}
+  .field .optional{color:var(--slate);font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;}
+  .field input{width:100%;border:1px solid var(--black);padding:13px 15px;font-family:var(--mono);font-size:15px;background:var(--paper);color:var(--black);outline:none;border-radius:0;box-shadow:4px 4px 0 var(--black);transition:box-shadow 0.1s;}
+  .field input:focus{box-shadow:2px 2px 0 var(--orange);border-color:var(--orange);}
+  .error-msg{font-size:12px;color:#CC2200;margin-top:5px;display:none;}
+
+  /* SUBMIT */
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--black);font-family:var(--mono);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;padding:16px 28px;border:1px solid var(--black);border-radius:0;box-shadow:4px 4px 0 var(--black);cursor:pointer;text-decoration:none;transition:transform 0.1s ease,box-shadow 0.1s ease;width:100%;justify-content:center;margin-top:20px;}
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black);}
+  .btn-outline{background:transparent;color:var(--black);}
+
+  /* VALIDATION NOTE */
+  .validation-note{display:none;background:#FFF3F0;border:1px solid var(--orange);padding:12px 16px;font-size:13px;color:#CC2200;margin-bottom:16px;}
+
+  /* LOADING */
+  .loading{display:none;text-align:center;padding:60px 0;font-size:14px;color:var(--slate);}
+
+  /* RESULT */
+  .result-wrap{display:none;padding:52px 0 80px;}
+  .result-tag{display:inline-block;font-family:var(--mono);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--orange);border:1px solid var(--orange);padding:5px 10px;margin-bottom:20px;}
+  .result-title{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95;font-size:clamp(28px,5vw,42px);margin:0 0 24px;}
+  .result-body{font-size:16px;color:var(--slate);max-width:560px;line-height:1.75;margin-bottom:32px;}
+  .result-line{border:none;border-top:1px solid var(--slate);margin:32px 0;}
+  .line-btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--black);font-family:var(--mono);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;padding:16px 28px;border:1px solid var(--black);border-radius:0;box-shadow:4px 4px 0 var(--black);cursor:pointer;text-decoration:none;transition:transform 0.1s ease,box-shadow 0.1s ease;}
+  .line-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black);}
+
+  /* FOOTER */
+  footer{background:var(--black);padding:22px 0;border-top:1px solid #333;}
+  footer .inner{max-width:1120px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;}
+  footer .logo-w{height:24px;width:auto;}
+  footer .back{font-size:12px;color:var(--slate);text-decoration:none;}
+  footer .back:hover{color:var(--orange);}
+
+  @media(max-width:560px){.wrap{padding:0 20px;}.form-wrap,.result-wrap{padding:32px 0 60px;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="inner">
+    <a href="index.html"><img class="logo" src="assets/logo-black.png" alt="brandbase"></a>
+    <span class="nav-tag">Brand Visual Audit</span>
+  </div>
+</header>
+
+<!-- FORM -->
+<div class="form-wrap" id="formWrap">
+  <div class="wrap">
+    <div class="form-intro">
+      <h1>Brand Visual Audit</h1>
+      <p>แบบทดสอบ 1 นาที เพื่อค้นพบว่าภาพลักษณ์ของแบรนด์กำลังช่วยหรือฉุดธุรกิจคุณ</p>
+    </div>
+
+    <!-- R1 -->
+    <div class="q-block">
+      <span class="q-label">ก่อนเริ่ม</span>
+      <p class="q-text">คุณเป็นคนตัดสินใจ (Final Decision Maker) ในเรื่อง visuals ของธุรกิจใช่ไหม?</p>
+      <div class="options">
+        <label class="option" data-q="r1" data-val="A"><input type="radio" name="r1"><span class="option-key">A</span><span class="option-text">ใช่ ฉันเป็นคนตัดสินใจ</span></label>
+        <label class="option" data-q="r1" data-val="B"><input type="radio" name="r1"><span class="option-key">B</span><span class="option-text">ไม่ใช่ คนอื่นเป็นคนตัดสินใจ</span></label>
+      </div>
+    </div>
+
+    <!-- R2 -->
+    <div class="q-block">
+      <span class="q-label">ทิศทาง</span>
+      <p class="q-text">คุณต้องการปรับหน้าตาและ mood/vibe ของแบรนด์ หรือต้องการความชัดเจนในระดับที่ลึกกว่านั้น เช่น purpose, vision, mission หรือ positioning?</p>
+      <div class="options">
+        <label class="option" data-q="r2" data-val="A"><input type="radio" name="r2"><span class="option-key">A</span><span class="option-text">ปรับหน้าตาและ mood/vibe ของแบรนด์ เช่น สี ฟอนต์ ไสตล์ภาพ ความรู้สึกโดยรวม</span></label>
+        <label class="option" data-q="r2" data-val="B"><input type="radio" name="r2"><span class="option-key">B</span><span class="option-text">สิ่งที่ลึกซึ้งกว่านั้น เช่น purpose, vision, mission หรือ positioning</span></label>
+      </div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 1 / 6</span>
+      <p class="q-text">คุณพอใจกับ visual ของแบรนด์คุณแค่ไหน?</p>
+      <div class="options">
+        <label class="option" data-q="q1" data-val="A" data-score="2"><input type="radio" name="q1"><span class="option-key">A</span><span class="option-text">ไม่พอใจเลย มันดูไม่ค่อยดีเท่าที่ควร</span></label>
+        <label class="option" data-q="q1" data-val="B" data-score="1"><input type="radio" name="q1"><span class="option-key">B</span><span class="option-text">โอเค แต่มันน่าจะดีกว่านี้ได้</span></label>
+        <label class="option" data-q="q1" data-val="C" data-score="0"><input type="radio" name="q1"><span class="option-key">C</span><span class="option-text">พอใจมาก มันสะท้อนธุรกิจเราได้ดีแล้ว</span></label>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 2 / 6</span>
+      <p class="q-text">Visual และความรู้สึกของแบรนด์คุณ เช่น งาน presentation, sales materials หรือเอกสารต่างๆ ให้ความรู้สึกเหมือนมาจากแบรนด์เดียวกันไหม?</p>
+      <div class="options">
+        <label class="option" data-q="q2" data-val="A" data-score="2"><input type="radio" name="q2"><span class="option-key">A</span><span class="option-text">ไม่เลย แต่ละชิ้นดูเหมือนมาจากคนละแบรนด์</span></label>
+        <label class="option" data-q="q2" data-val="B" data-score="1"><input type="radio" name="q2"><span class="option-key">B</span><span class="option-text">มันดูคล้ายกัน แต่ยังไม่ได้ดูเข้ากันซะทีเดียว</span></label>
+        <label class="option" data-q="q2" data-val="C" data-score="0"><input type="radio" name="q2"><span class="option-key">C</span><span class="option-text">ใช่ มันสอดคล้องกันดี</span></label>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 3 / 6</span>
+      <p class="q-text">Visual ของธุรกิจคุณทำให้ดูไม่ established เท่าที่ควรหรือเปล่า?</p>
+      <div class="options">
+        <label class="option" data-q="q3" data-val="A" data-score="2"><input type="radio" name="q3"><span class="option-key">A</span><span class="option-text">ใช่ เราดูเป็นมืออาชีพน้อยกว่าความเป็นจริง</span></label>
+        <label class="option" data-q="q3" data-val="B" data-score="0"><input type="radio" name="q3"><span class="option-key">B</span><span class="option-text">ไม่ visuals ของเราสะท้อนความเป็นมืออาชีพของธุรกิจได้ดีแล้ว</span></label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 4 / 6</span>
+      <p class="q-text">Visuals ของธุรกิจคุณ สื่อสารได้ตรงกับสิ่งที่คุณอยากให้ผู้คนรู้สึกรึเปล่า?</p>
+      <div class="options">
+        <label class="option" data-q="q4" data-val="A" data-score="2"><input type="radio" name="q4"><span class="option-key">A</span><span class="option-text">ไม่เลย</span></label>
+        <label class="option" data-q="q4" data-val="B" data-score="1"><input type="radio" name="q4"><span class="option-key">B</span><span class="option-text">บางส่วน</span></label>
+        <label class="option" data-q="q4" data-val="C" data-score="0"><input type="radio" name="q4"><span class="option-key">C</span><span class="option-text">ใช่เลย มันสื่อสารได้ดีแล้ว</span></label>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 5 / 6</span>
+      <p class="q-text">เวลาต้องการให้คนอื่นออกแบบงานให้ คุณสามารถอธิบายได้อย่างชัดเจนและเหมือนกันทุกครั้งไหมว่าแบรนด์ของคุณควรมีหน้าตาและความรู้สึกแบบไหน?</p>
+      <div class="options">
+        <label class="option" data-q="q5" data-val="A" data-score="2"><input type="radio" name="q5"><span class="option-key">A</span><span class="option-text">ฉันไม่แน่ใจว่าจะอธิบายยังไง</span></label>
+        <label class="option" data-q="q5" data-val="B" data-score="1"><input type="radio" name="q5"><span class="option-key">B</span><span class="option-text">ฉันพออธิบายได้ แต่งานที่ออกมาไม่ค่อยไปในทิศทางเดียวกัน</span></label>
+        <label class="option" data-q="q5" data-val="C" data-score="0"><input type="radio" name="q5"><span class="option-key">C</span><span class="option-text">ได้มันง่ายมาก ฉันสื่อสารได้ว่าแบรนด์ควรมีหน้าตาแบบไหน</span></label>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-block">
+      <span class="q-label">ข้อ 6 / 6</span>
+      <p class="q-text">เวลาเลือก visual หรือ layout สำหรับการสื่อสารแบรนด์ คุณตัดสินใจจากความชอบส่วนตัว หรือจาก direction ของแบรนด์?</p>
+      <div class="options">
+        <label class="option" data-q="q6" data-val="A" data-score="2"><input type="radio" name="q6"><span class="option-key">A</span><span class="option-text">ส่วนใหญ่ใช้ความชอบส่วนตัว</span></label>
+        <label class="option" data-q="q6" data-val="B" data-score="1"><input type="radio" name="q6"><span class="option-key">B</span><span class="option-text">พยายามใช้ direction ของแบรนด์ แต่ภาพรวมที่ออกมายังไม่ดีเท่าที่ควร</span></label>
+        <label class="option" data-q="q6" data-val="C" data-score="0"><input type="radio" name="q6"><span class="option-key">C</span><span class="option-text">มี direction ของแบรนด์ที่ชัดเจน</span></label>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-block">
+      <span class="q-label">ข้อมูลเพิ่มเติม</span>
+      <p class="q-text">เคยพยายามแก้ปัญหานี้มาก่อนไหม?</p>
+      <div class="options">
+        <label class="option" data-q="q7" data-val="A"><input type="radio" name="q7"><span class="option-key">A</span><span class="option-text">ยังไม่เคย</span></label>
+        <label class="option" data-q="q7" data-val="B"><input type="radio" name="q7"><span class="option-key">B</span><span class="option-text">เคยลองทำเอง</span></label>
+        <label class="option" data-q="q7" data-val="C"><input type="radio" name="q7"><span class="option-key">C</span><span class="option-text">เคยทำงานกับมืออาชีพหรือเอเจนซี</span></label>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section">
+      <h2>กรอกข้อมูลเพื่อดูผลลัพธ์</h2>
+      <div class="validation-note" id="validationNote">กรุณาตอบคำถามให้ครบทุกข้อก่อนดูผลลัพธ์</div>
+      <div class="field">
+        <label>ชื่อ <span style="color:var(--orange)">*</span></label>
+        <input type="text" id="contactName" placeholder="ชื่อของคุณ">
+        <p class="error-msg" id="errName">กรุณากรอกชื่อ</p>
+      </div>
+      <div class="field">
+        <label>LINE Username <span style="color:var(--orange)">*</span></label>
+        <input type="text" id="contactLine" placeholder="@lineusername">
+        <p class="error-msg" id="errLine">กรุณากรอก LINE Username</p>
+      </div>
+      <div class="field">
+        <label>อีเมล <span style="color:var(--orange)">*</span></label>
+        <input type="email" id="contactEmail" placeholder="email@example.com">
+        <p class="error-msg" id="errEmail">กรุณากรอกอีเมล</p>
+      </div>
+      <div class="field">
+        <label>เบอร์โทรศัพท์ <span class="optional">(ไม่บังคับ)</span></label>
+        <input type="tel" id="contactPhone" placeholder="0812345678">
+      </div>
+      <button class="btn" onclick="handleSubmit()">ดูผลลัพธ์</button>
+    </div>
+
+    <div class="loading" id="loadingState"><p>กำลังประมวลผล...</p></div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="result-wrap" id="resultWrap">
+  <div class="wrap">
+    <span class="result-tag" id="resultTag"></span>
+    <h2 class="result-title" id="resultTitle"></h2>
+    <p class="result-body" id="resultBody"></p>
+    <hr class="result-line">
+    <div id="resultCta"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="inner">
+    <img class="logo-w" src="assets/logo-white.png" alt="brandbase">
+    <a href="index.html" class="back">← กลับหน้าหลัก</a>
+  </div>
+</footer>
+
+<script>
+const SHEETS_URL='https://script.google.com/macros/s/AKfycbyc1ossB2K-7o0X9T7tdSJdjb7wN7R5F7JW69oEwB766te9zYO3zIOqI_B8G2zIjSyr/exec';
+const SCORE_MAP={q1:{A:2,B:1,C:0},q2:{A:2,B:1,C:0},q3:{A:2,B:0},q4:{A:2,B:1,C:0},q5:{A:2,B:1,C:0},q6:{A:2,B:1,C:0}};
+
+// Highlight selected option
+document.querySelectorAll('.option').forEach(opt=>{
+  opt.addEventListener('click',function(){
+    const q=this.dataset.q;
+    document.querySelectorAll('[data-q="'+q+'"]').forEach(o=>o.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+function getVal(q){
+  const sel=document.querySelector('[data-q="'+q+'"].selected');
+  return sel?sel.dataset.val:null;
+}
+
+function handleSubmit(){
+  // Collect answers
+  const questions=['r1','r2','q1','q2','q3','q4','q5','q6','q7'];
+  const answers={};
+  let missing=false;
+  questions.forEach(q=>{
+    const v=getVal(q);
+    answers[q]=v||'';
+    if(!v) missing=true;
+  });
+
+  // Validate contact
+  const name=document.getElementById('contactName').value.trim();
+  const line=document.getElementById('contactLine').value.trim();
+  const email=document.getElementById('contactEmail').value.trim();
+  const phone=document.getElementById('contactPhone').value.trim();
+  let contactValid=true;
+  document.querySelectorAll('.error-msg').forEach(e=>e.style.display='none');
+  if(!name){document.getElementById('errName').style.display='block';contactValid=false;}
+  if(!line){document.getElementById('errLine').style.display='block';contactValid=false;}
+  if(!email){document.getElementById('errEmail').style.display='block';contactValid=false;}
+
+  if(missing){
+    const note=document.getElementById('validationNote');
+    note.style.display='block';
+    note.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  if(!contactValid) return;
+
+  // Routing logic
+  let bucket;
+  if(answers.r1==='B') bucket='bucket5';
+  else if(answers.r2==='B') bucket='bucket3';
+  else{
+    let score=0;
+    ['q1','q2','q3','q4','q5','q6'].forEach(q=>{
+      if(SCORE_MAP[q]&&answers[q]) score+=SCORE_MAP[q][answers[q]]||0;
+    });
+    bucket=score>=9?'bucket1':score>=5?'bucket2':'bucket4';
+  }
+
+  // Show loading
+  document.getElementById('formWrap').style.display='none';
+  document.getElementById('loadingState').style.display='block';
+
+  // Send to sheets
+  const payload={name,line,email,phone,...answers,bucket};
+  fetch(SHEETS_URL,{method:'POST',body:JSON.stringify(payload)})
+    .then(()=>showResult(bucket))
+    .catch(()=>showResult(bucket));
+
+  // Tracking
+  if(typeof fbq!=='undefined') fbq('track','Lead');
+  if(typeof gtag!=='undefined') gtag('event','generate_lead',{event_category:'audit',event_label:bucket});
+}
+
+const BUCKETS={
+  bucket1:{tag:'แนะนำอย่างยิ่ง',title:'Brandbase เหมาะกับคุณมาก',body:'คำตอบของคุณสะท้อนรูปแบบที่ชัดเจน ภาพของแบรนด์ (Brand Visuals) กำลังทำให้ธุรกิจของคุณเติบโตไปกว่านี้ยาก นี่คือปัญหาแบบที่ brandbase ถูกสร้างมาเพื่อแก้ไข เราจะติดต่อคุณกลับภายใน 24 ชั่วโมง เพื่อแนะนำขั้นตอนถัดไป',cta:'line'},
+  bucket2:{tag:'เหมาะสม',title:'มีช่องว่างให้ปรับปรุง',body:'ภาพของแบรนด์ (Brand Visual) ของคุณไม่ได้แย่แต่ก็ควรจะดีกว่านี้ และคุณรู้สึกแบบนั้นอยู่แล้ว นี่คือปัญหาแบบที่ brandbase ถูกสร้างมาเพื่อแก้ไข เราจะติดต่อคุณกลับภายใน 24 ชั่วโมง เพื่อแนะนำขั้นตอนถัดไป',cta:'line'},
+  bucket3:{tag:'ไม่ใช่ brandbase',title:'คุณต้องการมากกว่า Brand Visuals',body:'สิ่งที่คุณกำลังมองหามันลึกกว่าเรื่อง brand visuals ซึ่งไม่ใช่เรื่องแย่เลย มันแค่หมายความว่า brandbase: Brand Visual Sprint อาจไม่ใช่จุดเริ่มต้นที่ดีสำหรับคุณ จะเราติดต่อกลับเมื่อมีบริการที่เหมาะสมมากกว่า',cta:'line'},
+  bucket4:{tag:'ยังไม่ถึงเวลา',title:'Brand Visuals ของคุณโอเคอยู่แล้ว',body:'Brand Visual ของคุณดูเหมือนกำลังทำงานได้ดีในตอนนี้และไม่มีปัญหาอะไร ถ้าสถานการณ์เปลี่ยนแปลงไป และคุณรู้สึกว่าภาพของแบรนด์ไม่ค่อยใช้แล้ว ติดต่อเราอีกครั้งได้เลย',cta:'line'},
+  bucket5:{tag:'ส่งต่อให้ผู้มีอำนาจตัดสินใจ',title:'คุณไม่ใช่ผู้ตัดสินใจ',body:'Brand Visuals Sprint Session จะเวิร์กที่สุดเมื่อผู้ที่มีอำนาจตัดสินใจ (Final Decision Maker) เรื่องภาพลักษณ์ของแบรนด์เป็นคนเข้าร่วมด้วยตัวเอง ส่งแบบทดสอบนี้ให้เขาได้เลย',cta:'share'}
+};
+
+function showResult(bucket){
+  document.getElementById('loadingState').style.display='none';
+  const b=BUCKETS[bucket];
+  document.getElementById('resultTag').textContent=b.tag;
+  document.getElementById('resultTitle').textContent=b.title;
+  document.getElementById('resultBody').textContent=b.body;
+  const ctaEl=document.getElementById('resultCta');
+  if(b.cta==='share'){
+    ctaEl.innerHTML='<div style="margin-bottom:16px;"><button class="btn btn-outline" style="width:auto;" onclick="if(navigator.share){navigator.share({title:\'Brand Visual Audit\',url:window.location.href})}else{navigator.clipboard.writeText(window.location.href).then(()=>alert(\'คัดลอก link แล้ว\'))}">แชร์แบบทดสอบนี้</button></div><a class="line-btn" href="https://lin.ee/xvZ19hO" target="_blank" rel="noopener">Chat with us on LINE</a>';
+  }else{
+    ctaEl.innerHTML='<a class="line-btn" href="https://lin.ee/xvZ19hO" target="_blank" rel="noopener">Chat with us on LINE — @brandbase</a>';
+  }
+  document.getElementById('resultWrap').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
